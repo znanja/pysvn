@@ -33,14 +33,13 @@ def run(self):
     os.system(sys.executable + ' setup.py configure')
     os.system('make clean')
     os.system('make')
-    os.system('make egg DISTDIR="%s"' % os.path.abspath(os.path.join('..', self.dist_dir)))
     os.chdir('..')              # Go back in parent directory
     # Add to 'Distribution.dist_files' so that the "upload" command works
     getattr( self.distribution, 'dist_files', [] ).append(
         ('bdist_egg', distutils.sysconfig.get_python_version(), self.egg_output) )
 
 # Monkey patch the building method with our custom one.
-setuptools.command.bdist_egg.bdist_egg.run = run
+#setuptools.command.bdist_egg.bdist_egg.run = run
 
 name = "pysvn"
 
