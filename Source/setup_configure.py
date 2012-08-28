@@ -1079,16 +1079,19 @@ class UnixCompilerGCC(CompilerGCC):
                         '/usr/share/python%s/CXX' % distutils.sysconfig.get_python_version() # typical Linux
                         ]
         self._find_paths_svn_inc = [
+                        '/opt/local/include/subversion-1',
                         '/usr/include/subversion-1',            # typical Linux
                         '/usr/local/include/subversion-1',      # typical *BSD
                         '/usr/pkg/include/subversion-1',        # netbsd
                         ]
         self._find_paths_svn_bin = [
+                        '/opt/local/bin',
                         '/usr/bin',                                # typical Linux
                         '/usr/local/bin',                        # typical *BSD
                         '/usr/pkg/bin',                                # netbsd
                         ]
         self._find_paths_svn_lib = [
+                        '/opt/local/lib',
                         '/usr/lib64',                           # typical 64bit Linux
                         '/usr/lib',                             # typical Linux
                         '/usr/local/lib64',                     # typical 64bit Linux
@@ -1096,6 +1099,7 @@ class UnixCompilerGCC(CompilerGCC):
                         '/usr/pkg/lib',                         # netbsd
                         ]
         self._find_paths_apr_inc = [
+                        '/opt/local/include/apr-1',
                         '/usr/include/apr-1',                   # typical Linux
                         '/usr/local/apr/include/apr-1',         # Mac OS X www.metissian.com
                         '/usr/pkg/include/apr-1',               # netbsd
@@ -1106,6 +1110,7 @@ class UnixCompilerGCC(CompilerGCC):
                         ]
         self._find_paths_apr_util_inc = self._find_paths_apr_inc
         self._find_paths_apr_lib = [
+                        '/opt/local/lib',
                         '/usr/lib64',                           # typical 64bit Linux
                         '/usr/lib',                             # typical Linux
                         '/usr/local/lib64',                     # typical 64bit Linux
