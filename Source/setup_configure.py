@@ -1172,7 +1172,7 @@ class LinuxCompilerGCC(UnixCompilerGCC):
                 ]
         if not self.setup.options.hasOption( '--norpath' ):
             py_ld_libs.extend( [
-                    '-Wl,--rpath',
+                    '-Wl,-rpath',
                     '-Wl,%(SVN_LIB)s'
                     ] )
         py_ld_libs.extend( [
@@ -1289,8 +1289,8 @@ class SunOsCompilerGCC(UnixCompilerGCC):
 
     def _getLdLibs( self ):
         py_ld_libs = [
-                '-L%(svn_lib_dir)s',
-                '-Wl,--rpath -Wl,%(svn_lib_dir)s',
+                '-L%(SVN_LIB)s',
+                '-Wl,--rpath -Wl,%(SVN_LIB)s',
                 '-lsvn_client-1',
                 '-lsvn_diff-1',
                 '-lsvn_repos-1',
