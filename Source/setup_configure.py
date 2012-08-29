@@ -1104,6 +1104,7 @@ class UnixCompilerGCC(CompilerGCC):
                         '/usr/include/apr-1',                   # typical Linux
                         '/usr/local/apr/include/apr-1',         # Mac OS X www.metissian.com
                         '/usr/pkg/include/apr-1',               # netbsd
+                        '/usr/include/apr-1.0',
                         '/usr/include/apache2',                 # alternate Linux
                         '/usr/include/httpd',                   # alternate Linux
                         '/usr/local/include/apr-1',             # typical *BSD
