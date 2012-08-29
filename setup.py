@@ -39,7 +39,7 @@ def run(self):
         ('bdist_egg', distutils.sysconfig.get_python_version(), self.egg_output) )
 
 # Monkey patch the building method with our custom one.
-#setuptools.command.bdist_egg.bdist_egg.run = run
+setuptools.command.bdist_egg.bdist_egg.run = run
 
 name = "pysvn"
 
