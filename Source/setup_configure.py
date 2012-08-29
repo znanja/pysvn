@@ -1094,6 +1094,7 @@ class UnixCompilerGCC(CompilerGCC):
                         '/opt/local/lib',
                         '/usr/lib64',                           # typical 64bit Linux
                         '/usr/lib',                             # typical Linux
+                        '/usr/lib/x86_64-linux-gnu/',
                         '/usr/local/lib64',                     # typical 64bit Linux
                         '/usr/local/lib',                       # typical *BSD
                         '/usr/pkg/lib',                         # netbsd
