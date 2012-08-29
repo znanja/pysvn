@@ -45,7 +45,7 @@ name = "pysvn"
 
 setuptools.setup(
     name = name,
-    version='%(MAJOR)s.%(MINOR)s.%(PATCH)s' % pysvn_version_info,
+    version='%(MAJOR)s.%(MINOR)s.%(PATCH)s-znanja1' % pysvn_version_info,
     author="Barry Scott",
     author_email="barryscott@tigris.org",
     description="Subversion support for Python",
