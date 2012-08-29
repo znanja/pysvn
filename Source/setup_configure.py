@@ -1290,7 +1290,7 @@ class SunOsCompilerGCC(UnixCompilerGCC):
     def _getLdLibs( self ):
         py_ld_libs = [
                 '-L%(SVN_LIB)s',
-                '-Wl,--rpath -Wl,%(SVN_LIB)s',
+                '-Wl,-rpath -Wl,%(SVN_LIB)s',
                 '-lsvn_client-1',
                 '-lsvn_diff-1',
                 '-lsvn_repos-1',
