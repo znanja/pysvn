@@ -19,6 +19,7 @@ import sys
 import os
 import os.path
 import setuptools.command.bdist_egg
+import platform
 
 pysvn_version_info = {}
 f = open( 'Builder/version.info', 'r' )
@@ -30,7 +31,13 @@ def run(self):
     # Generate metadata first
     self.run_command("egg_info")
     os.chdir('Source')
-    os.system(sys.executable + ' setup.py configure')
+		
+    # -m64 for some versions of GCC
+    arch='32'
+    if platform.architecture()[0] == '64bit':
+        arch='64'
+
+    os.system(sys.executable + ' setup.py configure --arch=%s' % arch)
     os.system('make clean')
     os.system('make')
     os.chdir('..')              # Go back in parent directory

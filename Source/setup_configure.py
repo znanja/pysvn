@@ -830,8 +830,13 @@ class CompilerGCC(Compiler):
     def __init__( self, setup ):
         Compiler.__init__( self, setup )
 
-        self._addVar( 'CCC',            'g++' )
-        self._addVar( 'CC',             'gcc' )
+        if self.options.hasOption( '--arch' ):
+            arch_options = ' '.join( ['-m%s' % (arch,) for arch in self.options.getOption( '--arch' )] )
+        else:
+            arch_options = ''
+
+        self._addVar( 'CCC',            'g++ %s' % (arch_options,) )
+        self._addVar( 'CC',             'gcc %s' % (arch_options,) )
 
     def getPythonExtensionFileExt( self ):
         return '.so'
