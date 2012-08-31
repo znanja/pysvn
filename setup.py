@@ -32,7 +32,7 @@ def run(self):
     self.run_command("egg_info")
     os.chdir('Source')
 		
-    os.system(sys.executable + ' setup.py configure' % arch)
+    os.system(sys.executable + ' setup.py configure')
     os.system('make clean')
     os.system('make')
     os.chdir('..')              # Go back in parent directory
