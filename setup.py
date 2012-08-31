@@ -32,12 +32,7 @@ def run(self):
     self.run_command("egg_info")
     os.chdir('Source')
 		
-    # -m64 for some versions of GCC
-    arch='32'
-    if platform.architecture()[0] == '64bit':
-        arch='64'
-
-    os.system(sys.executable + ' setup.py configure --arch=%s' % arch)
+    os.system(sys.executable + ' setup.py configure' % arch)
     os.system('make clean')
     os.system('make')
     os.chdir('..')              # Go back in parent directory
